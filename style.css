@@ -1,0 +1,28 @@
+body {
+    background-color: #121212; 
+    color: #00ff00;
+    font-family: sans-serif;
+}
+
+header {
+    border-bottom: 2px solid #00ff00;
+    padding: 10px;
+}
+
+nav a {
+    color: #00ffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    font-size: 12px;
+    color: gray;
+}
