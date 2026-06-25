@@ -1,23 +1,74 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Nosso Blog de Tecnologia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo Star Wars</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-        <h1>Blog Pedro e Gustavo</h1>
+        <div class="logo">STAR WARS</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#artigos">Artigos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <a href="#">Início</a> | <a href="#">Sobre</a>
-    </nav>
+    <section id="inicio" class="hero">
+        <div class="hero-conteudo">
+            <h1>Explore a Galáxia</h1>
+            <p>Fique por dentro dos maiores segredos da Força, dos Jedi e dos Sith.</p>
+            <a href="#artigos" class="btn-principal">Começar Jornada</a>
+        </div>
+    </section>
 
-    <main>
-        <h2>Título da Postagem</h2>
-        <p>Este é o nosso primeiro site criado na escola!</p>
-        <img src="link_da_sua_imagem.jpg" alt="Minha Imagem">
-    </main>
+    <section id="artigos" class="artigos-container">
+        <h2>Artigos em Destaque</h2>
+        <div class="grid-artigos">
+            
+            <article class="card-artigo">
+                <img src="https://images.unsplash.com/photo-1563089145-599997674d42?w=500" alt="Sabre de luz">
+                <div class="artigo-conteudo">
+                    <h3>O Caminho dos Jedi</h3>
+                    <p>Entenda a filosofia por trás dos protetores da paz na galáxia e como eles dominam a Força.</p>
+                    <button class="btn-ler" onclick="abrirArtigo('jedi')">Ler Mais</button>
+                </div>
+            </article>
+
+            <article class="card-artigo">
+                <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=500" alt="Espaço sideral">
+                <div class="artigo-conteudo">
+                    <h3>A Ascensão do Império</h3>
+                    <p>Como a República ruiu e deu lugar a um dos regimes mais tirânicos da história galáctica.</p>
+                    <button class="btn-ler" onclick="abrirArtigo('imperio')">Ler Mais</button>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section id="sobre" style="padding: 60px 20px; text-align: center; max-width: 800px; margin: 0 auto;">
+        <h2 style="color: #ffe81f; margin-bottom: 20px;">Sobre o Projeto</h2>
+        <p style="color: #aaa; line-height: 1.6;">Este é um site interativo criado para explorar a árvore cronológica e as histórias de Star Wars. Use os botões acima para navegar e ler os artigos completos diretamente na tela!</p>
+    </section>
+
+    <div id="modal-artigo" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar" onclick="fecharArtigo()">&times;</span>
+            <h2 id="modal-titulo">Título do Artigo</h2>
+            <div id="modal-texto">Texto do artigo...</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Universo Star Wars - Feito por um fã da Força.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,28 +1,214 @@
+/* Configurações Gerais e Layout Anterior mantidos... */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
 body {
-    background-color: #121212; 
-    color: #00ff00;
-    font-family: sans-serif;
+    background-color: #0b0b0b;
+    color: #ffffff;
+    scroll-behavior: smooth; /* Faz o clique no menu rolar a página suavemente */
 }
 
 header {
-    border-bottom: 2px solid #00ff00;
-    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #000000;
+    border-bottom: 2px solid #ffe81f;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-nav a {
-    color: #00ffff;
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffe81f;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffe81f;
+}
+
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=1200') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-conteudo h1 {
+    font-size: 48px;
+    color: #ffe81f;
+    margin-bottom: 10px;
+}
+
+.hero-conteudo p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn-principal {
+    display: inline-block;
+    background-color: #ffe81f;
+    color: #000000;
+    text-decoration: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-principal:hover {
+    background-color: #ffffff;
+    transform: scale(1.05);
+}
+
+.artigos-container {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.artigos-container h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #ffe81f;
+}
+
+.grid-artigos {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-artigo {
+    background-color: #1c1c1c;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 350px;
+    border: 1px solid #333;
+}
+
+.card-artigo img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.artigo-conteudo {
+    padding: 20px;
+}
+
+.artigo-conteudo h3 {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.artigo-conteudo p {
+    font-size: 14px;
+    color: #aaaaaa;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.btn-ler {
+    background: none;
+    display: inline-block;
+    color: #ffe81f;
     text-decoration: none;
     font-weight: bold;
+    border: 1px solid #ffe81f;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-main {
-    background-color: #1e1e1e;
-    padding: 20px;
-    border-radius: 10px;
+.btn-ler:hover {
+    background-color: #ffe81f;
+    color: #000000;
+}
+
+/* === ESTILOS DA JANELA MODAL (O ARTIGO ABERTO) === */
+.modal {
+    display: none; /* Fica escondido por padrão */
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-conteudo {
+    background-color: #1c1c1c;
+    padding: 30px;
+    border: 2px solid #ffe81f;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    color: #fff;
+    position: relative;
+}
+
+.modal-conteudo h2 {
+    color: #ffe81f;
+    margin-bottom: 15px;
+}
+
+.modal-conteudo p {
+    line-height: 1.6;
+    color: #dddddd;
+}
+
+.fechar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #ffe81f;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.fechar:hover {
+    color: #fff;
 }
 
 footer {
     text-align: center;
-    font-size: 12px;
-    color: gray;
+    padding: 20px;
+    background-color: #000000;
+    color: #666666;
+    margin-top: 50px;
+    font-size: 14px;
 }
