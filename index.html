@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universo Star Wars</title>
+    <title>Universo Star Wars Expandido</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,60 +13,93 @@
         <nav>
             <ul>
                 <li><a href="#inicio">Início</a></li>
-                <li><a href="#artigos">Artigos</a></li>
-                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#facoes">Facções</a></li>
+                <li><a href="#desafio">Sala Secreta</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="inicio" class="hero">
         <div class="hero-conteudo">
-            <h1>Explore a Galáxia</h1>
-            <p>Fique por dentro dos maiores segredos da Força, dos Jedi e dos Sith.</p>
-            <a href="#artigos" class="btn-principal">Começar Jornada</a>
+            <h1>A Força Despertou</h1>
+            <p>Escolha o seu caminho, enfrente o desafio da galáxia e pilote no hiperespaço.</p>
+            <a href="#facoes" class="btn-principal">Explorar Facções</a>
         </div>
     </section>
 
-    <section id="artigos" class="artigos-container">
-        <h2>Artigos em Destaque</h2>
-        <div class="grid-artigos">
-            
-            <article class="card-artigo">
-                <img src="https://images.unsplash.com/photo-1563089145-599997674d42?w=500" alt="Sabre de luz">
-                <div class="artigo-conteudo">
-                    <h3>O Caminho dos Jedi</h3>
-                    <p>Entenda a filosofia por trás dos protetores da paz na galáxia e como eles dominam a Força.</p>
-                    <button class="btn-ler" onclick="abrirArtigo('jedi')">Ler Mais</button>
+    <section id="facoes" class="container">
+        <h2>Escolha sua Facção</h2>
+        <p class="subtitulo">Clique nos botões para ativar o holograma de cada facção.</p>
+        
+        <div class="grid-facoes">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=500" alt="Jedi">
+                <div class="card-info">
+                    <h3>A Ordem Jedi</h3>
+                    <p>Defensores da paz e harmonia através do lado luminoso da Força.</p>
+                    <button class="btn-faccao btn-jedi" onclick="animarFaccao('jedi')">Invocar Mestre Yoda</button>
                 </div>
-            </article>
+            </div>
 
-            <article class="card-artigo">
-                <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=500" alt="Espaço sideral">
-                <div class="artigo-conteudo">
-                    <h3>A Ascensão do Império</h3>
-                    <p>Como a República ruiu e deu lugar a um dos regimes mais tirânicos da história galáctica.</p>
-                    <button class="btn-ler" onclick="abrirArtigo('imperio')">Ler Mais</button>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=500" alt="Império">
+                <div class="card-info">
+                    <h3>O Império Galáctico</h3>
+                    <p>Ordem absoluta e poder implacável governando as estrelas.</p>
+                    <button class="btn-faccao btn-imperio" onclick="animarFaccao('imperio')">Prestar Reverência</button>
                 </div>
-            </article>
+            </div>
 
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=500" alt="Mandaloriano">
+                <div class="card-info">
+                    <h3>Os Mandalorianos</h3>
+                    <p>Guerreiros lendários guiados por um código de honra rígido.</p>
+                    <button class="btn-faccao btn-mando" onclick="animarFaccao('mando')">Mostrar o Caminho</button>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="sobre" style="padding: 60px 20px; text-align: center; max-width: 800px; margin: 0 auto;">
-        <h2 style="color: #ffe81f; margin-bottom: 20px;">Sobre o Projeto</h2>
-        <p style="color: #aaa; line-height: 1.6;">Este é um site interativo criado para explorar a árvore cronológica e as histórias de Star Wars. Use os botões acima para navegar e ler os artigos completos diretamente na tela!</p>
-    </section>
-
-    <div id="modal-artigo" class="modal">
-        <div class="modal-conteudo">
-            <span class="fechar" onclick="fecharArtigo()">&times;</span>
-            <h2 id="modal-titulo">Título do Artigo</h2>
-            <div id="modal-texto">Texto do artigo...</div>
+    <div id="tela-animacao" class="overlay-animacao" onclick="fecharAnimacao()">
+        <div class="conteudo-animacao">
+            <div id="icone-animacao"></div>
+            <h2 id="texto-animacao"></h2>
+            <p>Clique em qualquer lugar para fechar</p>
         </div>
     </div>
 
+    <section id="desafio" class="secao-desafio">
+        <div class="caixa-desafio">
+            <h2>🔒 Desafio do Holocron</h2>
+            <p>Decifre o código para desbloquear a Sala Secreta com o simulador de voo.</p>
+            <p class="enigma">"Qual é o número do icônico esquadrão de caças X-Wing liderado por Luke Skywalker na destruição da Estrela da Morte?"</p>
+            
+            <div class="input-grupo">
+                <input type="text" id="resposta-input" placeholder="Digite sua resposta...">
+                <button onclick="verificarDesafio()">Desbloquear</button>
+            </div>
+            <p id="mensagem-erro" class="erro"></p>
+        </div>
+    </section>
+
+    <section id="sala-secreta" class="sala-secreta no-display">
+        <h2>🚀 Sala Secreta: Simulador Espacial</h2>
+        <p>Pressione <strong>Espaço</strong> ou <strong>Clique na Tela</strong> para fazer a nave subir. Desvie dos lasers vermelhos e dos meteoros!</p>
+        
+        <div class="janela-jogo">
+            <canvas id="canvasJogo" width="800" height="400"></canvas>
+            <div id="tela-gameover" class="gameover-overlay no-display">
+                <h3>Nave Destruída!</h3>
+                <p>Pontuação: <span id="pontos-finais">0</span></p>
+                <button onclick="reiniciarJogo()">Decolar Novamente</button>
+            </div>
+        </div>
+        <div class="placar">Pontos: <span id="score">0</span></div>
+    </section>
+
     <footer>
-        <p>&copy; 2026 Universo Star Wars - Feito por um fã da Força.</p>
+        <p>&copy; 2026 Universo Star Wars Expandido - Que a Força esteja com você.</p>
     </footer>
 
     <script src="script.js"></script>
